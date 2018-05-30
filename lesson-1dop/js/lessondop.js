@@ -21,3 +21,4 @@ b  = String(b);
 
 console.log(b.split(''));
 console.log(b.slice(0, 2));
+alert("Первые две цифры числа " + b.slice(0, 2));
