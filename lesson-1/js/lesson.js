@@ -16,10 +16,10 @@ for (let i = 0; i < 5; i++) {
 
 	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
 		console.log('Всё верно!');
-			mainList.shopGoods[i] = a;
+		mainList.shopGoods[i] = a;
 	} else {
 		alert('Некорректно заполнена строка!');
-		i = -1;
+		i--;
 	}
 }
 
@@ -30,10 +30,10 @@ while (i < 4) {
 	i++;
 	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
 		console.log('Всё верно!');
-			mainList.shopGoods[i] = a;
+		mainList.shopGoods[i] = a;
 	} else {
 		alert('Некорректно заполнена строка!');
-		i = -1;
+		i--;
 	}
 }*/
 
@@ -43,10 +43,10 @@ do {
 	i++;
 		if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
 		console.log('Всё верно!');
-			mainList.shopGoods[i] = a;
+		mainList.shopGoods[i] = a;
 	} else {
 		alert('Некорректно заполнена строка!');
-		i = -1;
+		i--;
 	}
 }
 while (i < 4);*/
