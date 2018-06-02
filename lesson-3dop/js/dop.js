@@ -41,7 +41,7 @@ function newFunction(a) {
 		console.log(a.trim());
 		} else if (a.length > 50) {
 			a = a.trim();
-			a = a.substr(0,50) + "...";
+			a = a.slice(0,50) + "...";
 			console.log(a);
 		} else {
 			alert('Некорректно заполнена строка!');
