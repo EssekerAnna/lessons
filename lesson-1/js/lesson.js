@@ -1,20 +1,67 @@
-var money = +prompt("Ваш бюджет на месяц?", "10000");
-var nameShop = prompt("Название вашего магазина?", "Фиалка");
+let money = prompt("Ваш бюджет на месяц?");
+let name = prompt("Название вашего магазина?");
+let time = 19;
 
-var first = prompt("Какой тип товаров будем продавать?", "Овощи");
-var second = prompt("Какой тип товаров будем продавать?", "Овощи");
-var third = prompt("Какой тип товаров будем продавать?", "Овощи");
+let mainList = {
+	budget: money,
+	shopName: name,
+	shopGoods: [],
+	employers: {},
+	open: false
+}
 
-var mainList = {
-	money,
-	nameShop,
-	shopGoods: [first, second, third],
-	employers: {name: "Вася, Петя"},
-	open: true
+for (let i = 0; i < 5; i++) {
+
+	let a = prompt("Какой тип товаров будем продавать?");
+
+	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
+		console.log('Всё верно!');
+			mainList.shopGoods[i] = a;
+	} else {
+		alert('Некорректно заполнена строка!');
+		i = -1;
+	}
+}
+
+
+/*let i = 0;
+while (i < 4) {
+	let a = prompt("Какой тип товаров будем продавать?");
+	i++;
+	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
+		console.log('Всё верно!');
+			mainList.shopGoods[i] = a;
+	} else {
+		alert('Некорректно заполнена строка!');
+		i = -1;
+	}
+}*/
+
+/*let i = 0;
+do {
+	let a = prompt("Какой тип товаров будем продавать?");
+	i++;
+		if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
+		console.log('Всё верно!');
+			mainList.shopGoods[i] = a;
+	} else {
+		alert('Некорректно заполнена строка!');
+		i = -1;
+	}
+}
+while (i < 4);*/
+
+
+if (time < 0) {
+	console.log("Такого просто не может быть");
+} else if (time > 8 && time < 20) {
+	console.log("Время работать!");
+} else if (time < 24) {
+	console.log("Уже слишком поздно!");
+} else {
+	console.log("В сутках только 24 часа!");
 };
 
-console.log(mainList);
+alert("Ваш бюджет на один день: " + (mainList.budget / 30));
 
-var oneDay = money / 30;
-alert("Ваш бюджет на один день: " + (oneDay));
-console.log("Ваш бюджет на один день: ", oneDay);
+console.log(mainList);
