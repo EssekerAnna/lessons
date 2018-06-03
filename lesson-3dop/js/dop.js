@@ -9,7 +9,7 @@ console.log(str);
 str = str.slice(19,26);
 console.log(str);
 
-str = str.slice(0,4) + "о";
+str = str.slice(0,4) + "оо";
 console.log(str);
 alert(str);
 

@@ -1,10 +1,10 @@
-let money, name, time, price
+let money, name, time, price;
 
 function start() {
-	money = prompt("Ваш бюджет на месяц?");
-	while (isNaN(money) || money == "" || money == null) {
+	do {
 		money = prompt("Ваш бюджет на месяц?");
-	};
+	}
+	while (isNaN(money) || money == "" || money == null);
 	name = prompt("Название вашего магазина?").toUpperCase();
 }
 start();
