@@ -11,11 +11,11 @@ function myClock() {
 	}
 
 	if (m.length < 2) {
-		h = '0' + m;
+		m = '0' + m;
 	}
 
 	if (s.length < 2) {
-		h = '0' + s;
+		s = '0' + s;
 	}
 
 	let clockString = h + ':' + m + ':' + s;
