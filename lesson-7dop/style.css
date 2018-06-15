@@ -1,0 +1,26 @@
+.round {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	border-radius: 50%;
+	position: relative;
+}
+
+.square {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: relative;
+}
+
+.btn {
+	margin-bottom: 50px;
+	color: white;
+	background-color: #000;
+	border-radius: 5px;
+	border: none;
+	width: 100px;
+	height: 30px;
+	cursor: pointer;
+	outline: none;
+}
