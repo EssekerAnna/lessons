@@ -1,3 +1,12 @@
+.status-cont {
+  margin-top: 30px;
+  color: #fff;
+}
+
+.status {
+  margin-top: 20px;
+}
+
 .fade {
   -webkit-animation-name: fade;
           animation-name: fade;

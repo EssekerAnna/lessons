@@ -110,4 +110,90 @@ for (let i = 0; i < descr.length; i++) {
 	});
 }
 
+// Form
+let message = new Object();
+message.loading = 'Загрузка...';
+message.success = 'Спасибо! Скоро мы с вами свяжемся';
+message.failure = 'Что-то пошло не так...';
+
+let form = document.getElementsByClassName('main-form')[0],
+				input = document.getElementsByTagName('input'),
+				statusMessage = document.createElement('div');
+
+statusMessage.classList.add('status');
+
+form.addEventListener('submit', function(event) {
+	event.preventDefault();
+	form.appendChild(statusMessage);
+
+	// AJAX
+	let request = new XMLHttpRequest();
+	request.open('POST', '../server.php');
+	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+	let formData = new FormData(form);
+
+	request.send(formData);
+
+	request.onreadystatechange = function() {
+		if (request.readyState < 4) {
+			statusMessage.innerHTML = message.loading;
+		} else if (request.readyState === 4) {
+			if (request.status == 200 && request.status < 300) {
+				statusMessage.innerHTML = message.success;
+				// Добавляем контент на страницу
+			}
+			else {
+				statusMessage.innerHTML = message.failure;
+			}
+		}
+	}
+	for (let i = 0; i < input.length; i++) {
+		input[i].value = '';
+		// Очищаем поля ввода
+	}
+});
+
+
+// FormContacts
+
+let formCont = document.getElementsByClassName('contact-form')[0],
+				inputCont = document.getElementsByTagName('input'),
+				statusMessageCont = document.createElement('div');
+
+statusMessageCont.classList.add('status-cont');
+
+formCont.addEventListener('submit', function(event) {
+	event.preventDefault();
+	formCont.appendChild(statusMessageCont);
+
+	// AJAX
+	let request = new XMLHttpRequest();
+	request.open('POST', '../server.php');
+	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+	let formDataCont = new FormData(formCont);
+
+	request.send(formDataCont);
+
+	request.onreadystatechange = function() {
+		if (request.readyState < 4) {
+			statusMessageCont.innerHTML = message.loading;
+		} else if (request.readyState === 4) {
+			if (request.status == 200 && request.status < 300) {
+				statusMessageCont.innerHTML = message.success;
+				// Добавляем контент на страницу
+			}
+			else {
+				statusMessageCont.innerHTML = message.failure;
+			}
+		}
+	}
+	for (let i = 0; i < inputCont.length; i++) {
+		inputCont[i].value = '';
+		// Очищаем поля ввода
+	}
+});
+
+
 });
