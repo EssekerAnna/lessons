@@ -129,12 +129,12 @@ form.addEventListener('submit', function(event) {
 	// AJAX
 	let request = new XMLHttpRequest();
 	request.open('POST', '../server.php');
+	request.open('POST', '../mail.php');
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 	let formData = new FormData(form);
 
 	request.send(formData);
-
 	request.onreadystatechange = function() {
 		if (request.readyState < 4) {
 			statusMessage.innerHTML = message.loading;
@@ -170,6 +170,7 @@ formCont.addEventListener('submit', function(event) {
 	// AJAX
 	let request = new XMLHttpRequest();
 	request.open('POST', '../server.php');
+	request.open('POST', '../mail.php');
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 	let formDataCont = new FormData(formCont);
